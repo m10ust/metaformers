@@ -1,0 +1,13 @@
+{
+  "run_id": "20250813-051843",
+  "started_utc": "2025-08-13T05:18:43Z",
+  "models": {
+    "questioner": "llama2-uncensored:latest",
+    "creator": "gpt-oss:20b",
+    "mediator": "dolphin3:latest"
+  },
+  "seed": "Strutured approach into building a Llocal LLM capable of metacognition. Should be able to run on a mac mini with m4 pto chip, python and postgresql.",
+  "turns": 40,
+  "mediator_every": 3,
+  "ollama_bin": "/usr/local/bin/ollama"
+}

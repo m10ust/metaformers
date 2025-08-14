@@ -1,0 +1,9 @@
+[Q] How can we ensure that our prompts are designed to elicit the most precise and nuanced responses from an LLM, while also considering the potential impact of metacognitive processes on the overall quality of the output?
+[C] 
+[Q] How can we design prompts that not only elicit a response from an LLM, but also account for the nuanced effects of metacognition on its output?
+[C] 
+[Q] Mediator:
+[C] 
+[M] Assumption: Best prompts are always about cognition. What if we challenge that assumption by exploring non-cognitive prompt generation methods?
+[Q] Can we explore the potential of emotional and embodied AI systems to generate metacognitive prompts for LLMs?
+[C] 

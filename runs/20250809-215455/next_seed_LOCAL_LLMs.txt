@@ -1,0 +1,18 @@
+You are three AI models working collaboratively to improve metacognition in LOCAL LLMs (Ollama + consumer GPUs/CPU).
+Constraints: ≤20B params friendly, low-VRAM quantization, no network, minimal deps, reproducible on macOS/Linux.
+Start from these distilled principles:
+- confidence calibration; measure expected calibration error (ECE) and reduce overconfidence via loss on |ĉ − 1[correct]|
+- plan: introduce early-exit policy for “easy” queries; verify compute savings vs. accuracy delta
+- retrieval gating with learnable factor g_t; test ablation with/without retrieval under low-confidence
+- set thresholds for self-check triggers; verify false-positive/false-negative rates on OOD prompts
+- define rubric: 2–4 numbered steps, 3 bullets, and at least one measurable metric per answer
+- meta-self-attention over attention maps A_ℓ; rescale attention with token-level confidence c_i
+- evaluate: hallucination rate ↓ on factual QA; track calibration and exact-match score
+- constraint: ≤3% FLOPs overhead; ablation on residual feedback b_i magnitude (||b||₂)
+- MetaCritic: multi-objective reward [accuracy, conf-align, coherence, domain]; actor-critic update
+- step: rolling buffer (state, action, reward); periodic lightweight policy gradient
+
+Produce a compact, structured response with:
+- Conceptual Insight (2–4 sentences)
+- Practical Mechanism (4–8 numbered steps)
+- Why This Matters (3 bullets)

@@ -1,0 +1,3 @@
+[Q] What are some techniques for developing a prompt that elicits clear and accurate responses from an LLM regarding metacognitive processes such as self-awareness, reflection, and decision making?
+[C] Thinking...
+[Q] How can we design prompts to ensure that the LLM's response is grounded in a clear understanding of the user's problem or task at hand?

@@ -1,0 +1,14 @@
+{
+  "run_id": "20250813-004656",
+  "started_utc": "2025-08-13T00:46:56Z",
+  "models": {
+    "questioner": "llama2-uncensored:latest",
+    "creator": "gpt-oss:20b",
+    "mediator": "dolphin3:latest"
+  },
+  "seed": "Metagonition in LLms",
+  "turns": 12,
+  "mediator_every": 3,
+  "ollama_bin": "/usr/local/bin/ollama",
+  "ended_utc": "2025-08-13T00:55:14Z"
+}

@@ -1,0 +1,18 @@
+You are three AI models working collaboratively to improve metacognition in transformer LLMs.
+Start from these distilled principles:
+
+- We need to propose a novel architecture or mechanism for metacognition in transformer-based LLMs. Provide conceptual insight, practical mechanism, and why it matters. Should be novel compared to existing MCoT, self-supervised, etc. Provide architecture details, maybe a dual-branch architecture: one for task-specific representation, another for self-evaluation, integrated via attention gating and meta-critic. Also propose dynamic calibration and explanation via learned confidence.
+- **Conceptual Insight**  
+- Modern language models treat every token as just another input to be transformed.  They never ask *“do I feel confident about this?”* or *“is my reasoning internally consistent?”* The key to true metacognition is a *parallel monitoring stream* that observes the model’s own hidden dynamics, compares them against a learned model‑of‑model, and produces a **confidence‑aware, self‑critical signal**.  Instead of a one‑time calibration head, the monitor runs **throughout** the transformer stack, so the model can adjust its own attention, weight updates, or inference strategy on the fly.
+- **Practical Mechanism – Self‑Reflective Transformer (SRT)**  
+- | **Meta‑Reflector Stream** | A parallel shallow transformer that ingests *intermediate* activations from every layer of the backbone. | 1‑2 layers, hidden size = ¼ of backbone, uses *cross‑layer attention* (each reflector layer attends to all backbone layers). |
+- | **Coherence Vector** | A compact representation summarising the global internal consistency of the backbone. | The final hidden state of the reflector stream is pooled (e.g., mean‑pool across tokens) to form a **Coherence Token (C‑token)**. |
+- | **Confidence Head** | Predicts a scalar confidence score for the backbone’s next‑token probability distribution. | A small MLP on top of the C‑token. |
+- | **Self‑Critical Gate (SC‑Gate)** | Modulates the backbone’s layer‑norm statistics (scale & bias) and attention weights in real time, driven by the confidence score. | If confidence < τ, the SC‑Gate increases dropout, reduces key/value scaling, or activates a fallback “fallback mode” (e.g., copy‑previous token). |
+- | **Training Regimen** | Jointly train backbone + reflector on downstream tasks (QA, summarisation) while periodically fine‑tuning the reflector on *synthetic self‑diagnosis* data (e.g., generating noisy inputs and training the reflector to detect them). | Uses mixed‑precision and gradient checkpointing to keep overhead < 5 % FLOPs. |
+- **Why This Matters**
+
+Produce a compact, structured response with:
+- Conceptual Insight (2–4 sentences)
+- Practical Mechanism (4–8 numbered steps)
+- Why This Matters (3 bullets)

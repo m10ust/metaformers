@@ -1,0 +1,58 @@
+# Metaformers Master Log Summary (20250809-234431 UTC)
+
+- Iterations detected: **50** (from 1 to 50)
+- Creator exchanges: **50**
+- Mediator exchanges: **5**
+
+## Top keyword hits (creator responses)
+- meta: 100
+- attention: 40
+- memory: 29
+- confidence: 26
+- reward: 22
+- policy: 21
+- retrieval: 20
+- calibration: 16
+- domain: 16
+- residual: 14
+- critic: 13
+- self-check: 12
+- ablation: 11
+- rubric: 10
+- temperature: 9
+- early-exit: 8
+- ood: 7
+- actor: 6
+- adapter: 5
+- ppo: 3
+
+## Distilled bullets from last 5 Creator outputs
+
+### Block 1
+- confidence calibration; measure expected calibration error (ECE) and reduce overconfidence via loss on |ĉ − 1[correct]|
+- plan: introduce early-exit policy for “easy” queries; verify compute savings vs. accuracy delta
+- retrieval gating with learnable factor g_t; test ablation with/without retrieval under low-confidence
+- set thresholds for self-check triggers; verify false-positive/false-negative rates on OOD prompts
+- define rubric: 2–4 numbered steps, 3 bullets, and at least one measurable metric per answer
+
+### Block 2
+- meta-self-attention over attention maps A_ℓ; rescale attention with token-level confidence c_i
+- evaluate: hallucination rate ↓ on factual QA; track calibration and exact-match score
+- constraint: ≤3% FLOPs overhead; ablation on residual feedback b_i magnitude (||b||₂)
+- test: domain adapters; rank per-domain reward vectors and compare Pareto front vs. single reward
+
+### Block 3
+- MetaCritic: multi-objective reward [accuracy, conf-align, coherence, domain]; actor-critic update
+- step: maintain rolling buffer (state, action, reward); periodic lightweight policy gradient
+- threshold schedule for correction vs. retrieval; measure latency impact (ms) and accuracy delta (%)
+- verify with OOD split; track risk of unnecessary re-runs
+
+### Block 4
+- practical mechanism: 4–8 steps with numbered sequence; include temperature scheduling tied to c_i
+- test: ablation removing confidence head; measure degradation in precision@k and EM
+- constraint: LOCAL LLMs ≤20B, low-VRAM quant; prefer knobs that work with Ollama
+
+### Block 5
+- evaluate: report compute budget; average passes per query; early-exit savings vs. accuracy
+- rubric: Conceptual Insight / Practical Mechanism / Why This Matters present; reject if missing
+- verify: log per-token c_i and action logits; audit a few traces for interpretability

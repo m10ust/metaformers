@@ -1,0 +1,8 @@
+OLLAMA_BIN=/usr/local/bin/ollama
+ollama version is 0.11.4
+NAME                        ID              SIZE      MODIFIED     
+gpt-oss:latest              e95023cf3b7b    13 GB     41 hours ago    
+gpt-oss:20b                 f2b8351c629c    13 GB     4 days ago      
+llama2-uncensored:latest    44040b922233    3.8 GB    7 days ago      
+dolphin3:latest             d5ab9ae8e1f2    4.9 GB    13 days ago     
+ended_utc=2025-08-12T17:03:31Z

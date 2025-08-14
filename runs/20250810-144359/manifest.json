@@ -1,0 +1,18 @@
+{
+  "run_id": "20250810-144359",
+  "parent_run_id": "LLM
+20250810-144359",
+  "started_utc": "2025-08-10T14:43:59Z",
+  "cwd": "/Users/m4/Documents/Text/LLM Stuff/Metaformers",
+  "models": {
+    "questioner": "llama2-uncensored:latest",
+    "creator": "gpt-oss:20b",
+    "mediator": "dolphin3:latest",
+    "judge": "llama2-uncensored:latest"
+  },
+  "iterations": 60,
+  "mediator_every": 10,
+  "creator_think_secs": 30,
+  "ollama_bin": "/usr/local/bin/ollama",
+  "seed_source": "You are three AIs (Questioner=Llama2, Creator=gpt-oss, Mediator=..."
+}
