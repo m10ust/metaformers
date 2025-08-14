@@ -59,4 +59,4 @@ It follows a simple but powerful arc:
 [Turn 25] Dolphin3: That implies adding a memory bank to the PostgreSQL schema…
 [Turn 26] GPT-OSS: Yes — and here’s the pseudo-code to implement it.
 
-Use it in a responsible manner. Change models as needed in the scripts to fit your stack.
+Use it in a responsible manner. Adding powerful models in this loops could have deep implications. Change models as needed in the scripts to fit your tech stack. Stay curious and feed the loops!
