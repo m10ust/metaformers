@@ -41,7 +41,7 @@ It follows a simple but powerful arc:
 | Component         | Purpose |
 |-------------------|---------|
 | **PyTorch**       | Core tensor engine for model execution |
-| **LLaMA 2 / Dolphin3** | Open-source LLMs used as Questioner (Llama 2) and Reviewer/wildcard (Dolphin3) for perspective contrast and synthesis  |
+| **LLaMA 2 / Dolphin3** | Open-source LLMs used as Questioner (Llama 2) and Mediator/Reviewer/wildcard (Dolphin3) for perspective contrast and wildcard injection  |
 | **GPT-OSS**       | Open-source GPT-compatible agent donig the main reasoning and heavylifting |
 | **PostgreSQL**    | Data source for context injection |
 | **Python**        | Orchestration of turns, logging, and DB access |
