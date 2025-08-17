@@ -1,5 +1,15 @@
 # Metaformers
 
+# Clone the repo
+git clone https://github.com/m10ust/metaformers.git
+cd metaformers
+
+# Run a seed loop (Mac/BSD)
+python metaformers_seedprompt_autochaining_terminal.py
+
+# Run on Linux
+python metaformers_linux.py
+
 Metaformers is an experimental AI orchestration stack designed to **set a conversation in motion and let it evolve**.  
 Starting from a single **initial prompt** — the *seed question* — three models engage in a structured, iterative dialogue loop, building on each other’s outputs until entirely new insights and behaviors emerge.
 
