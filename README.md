@@ -47,6 +47,8 @@ It follows a simple but powerful arc:
 | **Python**        | Orchestration of turns, logging, and DB access |
 | **JSON Logs**     | Structured iteration transcripts |
 
+PS: You don't need PyTorch and PostgreSQL to test the loop. The two main scripts (metaformers_seedprompt_autochaining_terminal.py (MacOS and BSD-friendly) and metaformers_linux.py (Linux-friendly and can accomodate slower rigs) in the root folder are designed to work withonly Python and Ollama + Llama 2, GPT-OSS and Dolphin3 installed localy. The PyTorch implementation is at early stage and for advanced users confortable with pgvector (PostgreSQL) and PyTorch. The ingest.py script is what you use to make ingestion of .txt files or whathave you, currently it is configured for txt files. Then you run the rag_chat.py to chat with the models on IE what they have ingested last etc... It's possible, actually 100% sure the scripts have my local configs so replace them if you want to use them. Building a strong database is essential here so everything works well. Unexperienced users can still use the Metaformers main scripts and have fun since it only uses Python and Ollama. Anyone with Python and Ollama installed can instantly start experimenting. This is the way Metaformers was designed to be experimented with in the first place. No Pytorch and PostgreSQL non-sense. Local & private + fully recursive :)
+
 ---
 
 ## 🧠 Example Loop Flow
