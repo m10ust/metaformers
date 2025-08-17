@@ -1,0 +1,13 @@
+📜 Metaformers Manifesto v0.1
+
+1. Conceptual Insight: Metacognition as Governance
+
+Metacognition in LLMs extends beyond confidence scoring — it becomes a governance mechanism. A meta-layer monitors the reasoning process in real time, auditing outputs for coherence, confidence, and alignment with task objectives. This transforms introspection from a passive diagnostic into an active governing agent that can guide, suppress, or redirect model behavior dynamically.
+
+2. Practical Mechanism: Federated Meta-Layers
+
+The architecture is not a monolith but a federation of sub-models. Each model assumes complementary roles — challenger, explainer, calibrator — and operates in parallel. A lightweight meta-controller orchestrates these roles by reading internal signals (e.g., hidden state divergences, entropy of predictions) and issuing role-change events or confidence vetoes. To prevent infinite regress (“monitors of monitors”), heuristic cut-offs and efficiency filters cap recursion at useful depth.
+
+3. Why This Matters: Societies of AIs
+
+Metaformers are not simply smarter individual models; they represent the emergence of AI societies. Within such a society, models can hold each other accountable, simulate adversarial debate, and adaptively reassign responsibilities in real time. This mirrors biological systems (inhibitory neurons, prefrontal control) and physical systems (entangled correlations in quantum states). By embedding governance into the very structure of dialogue, Metaformers chart a path toward resilient, self-aware, and cooperative AI collectives
