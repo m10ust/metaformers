@@ -1,4 +1,4 @@
-# Metaformers
+# Metaformers (now in colors!)
 
 # Clone the repo
 git clone https://github.com/m10ust/metaformers.git
