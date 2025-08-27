@@ -50,7 +50,7 @@ It follows a simple but powerful arc:
 
 ---
 
-## 📦 Stack Components
+## 📦Suggested Stack Components
 | Component         | Purpose |
 |-------------------|---------|
 | **PyTorch**       | Core tensor engine for model execution |
@@ -62,8 +62,43 @@ It follows a simple but powerful arc:
 
 PS: The version 5 of the script (metaformers_v5.py) let you choose the model you want by listing all your model and letting you make a selection. Thought I would mention it. 
 
-PS: You don't need PyTorch and PostgreSQL to test the loop. The two main scripts (metaformers_seedprompt_autochaining_terminal.py (MacOS and BSD-friendly) and metaformers_linux.py (Linux-friendly and can accomodate slower rigs) in the root folder are designed to work withonly Python and Ollama + Llama 2, GPT-OSS and Dolphin3 installed localy. The PyTorch implementation is at early stage and for advanced users confortable with pgvector (PostgreSQL) and PyTorch. The ingest.py script is what you use to make ingestion of .txt files or whathave you, currently it is configured for txt files. Then you run the rag_chat.py to chat with the models on IE what they have ingested last etc... It's possible, actually 100% sure the scripts have my local configs so replace them if you want to use them. Building a strong database is essential here so everything works well. Unexperienced users can still use the Metaformers main scripts and have fun since it only uses Python and Ollama. Anyone with Python and Ollama installed can instantly start experimenting. This is the way Metaformers was designed to be experimented with in the first place. No Pytorch and PostgreSQL non-sense. Local & private + fully recursive :)
+PS: You don't need PyTorch and PostgreSQL to test the loop. The two main scripts (metaformers_v5.py (MacOS and BSD-friendly) and metaformers_linux.py (Linux-friendly and can accomodate slower rigs) in the root folder are designed to work with only Python and Ollama + models of your choice installed localy. The PyTorch implementation is at early stage and for advanced users confortable with pgvector (PostgreSQL) and PyTorch. The ingest.py script is what you use to make ingestion of .txt files or whathave you, currently it is configured for txt files. Then you run the rag_chat.py to chat with the models on IE what they have ingested last etc... It's possible, actually 100% sure the scripts have my local configs so replace them if you want to use them. Building a strong database is essential here so everything works well. Unexperienced users can still use the Metaformers main scripts and have fun since it only uses Python and Ollama. Anyone with Python and Ollama installed can instantly start experimenting. This is the way Metaformers was designed to be experimented with in the first place. No Pytorch and PostgreSQL non-sense. Local & private + fully recursive :)
 
+```mermaid
+flowchart TD
+    %% Metaformers Peer-Review Loop
+    A[Seed / Prior Turn] --> Q["Questioner<br/>• Refines/presses claim<br/>• Poses 1 focused question"]
+    Q --> C["Creator<br/>• Proposes answer & structure<br/>• May emit NextPrompt"]
+    C -->|every N turns| M["MediatorQ<br/>• Meta-critique / sharpen next step"]
+    C --> S["Scriber<br/>• 2–4 bullet summary<br/>• Captures claims & TODOs"]
+    S --> L["Logger (master.md)<br/>• Turn header<br/>• Role blocks<br/>• NextTopic hint"]
+    M --> L
+
+    %% Feedback & Emergence
+    L -->|AUTO_CHAIN on| Q
+    C -. emergent prompts .-> Q
+    Q -. anomaly flags .-> L
+
+    %% Roles as “peer reviewers”
+    subgraph ReviewDynamics[Peer-Review Dynamics]
+      RV1[Questioner ≈ Reviewer #1<br/>skeptical probe]
+      RV2[MediatorQ ≈ Reviewer #2<br/>scope/assumption check]
+      CH[Archivist/Logger ≈ Program Chair<br/>tracks issues]
+    end
+
+    Q --- RV1
+    M --- RV2
+    L --- CH
+
+    %% Health checks
+    classDef role fill:#1f77b4,stroke:#0e3d66,color:#fff;
+    classDef proc fill:#2ca02c,stroke:#135a13,color:#fff;
+    classDef meta fill:#bcbd22,stroke:#6d6f14,color:#111;
+    class Q,RV1 role
+    class C proc
+    class M,RV2 meta
+    class S,L,CH meta
+```
 ---
 
 ## 🧠 Example Loop Flow
