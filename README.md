@@ -1,4 +1,5 @@
 # Metaformers (now in colors!)
+Peer-reviewed? Not yet. Color-coded? Absolutely.
 
 # Clone the repo
 git clone https://github.com/m10ust/metaformers.git
