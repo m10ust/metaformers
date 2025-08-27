@@ -78,6 +78,21 @@ flowchart TD
     class Qp,Mp,Sp,Lp review;
 
 ```
+##     Methodology
+
+Metaformers implements a structured dialogue orchestration protocol inspired by peer-review dynamics. A single seed prompt initiates the cycle. Roles are distributed across independent models:
+	•	Questioner (Q) – refines the problem space, posing a focused claim or question (Reviewer #1: skeptical probe).
+	•	Creator (C) – generates a structured answer or proposal, optionally seeding the next iteration (Reviewer #2: constructive scope/assumption check).
+	•	Scriber (S) – condenses outputs into bullet summaries and captures claims, open issues, and TODOs (Archivist).
+	•	MediatorQ (M) – periodically injects meta-critique to re-frame or sharpen direction (Meta-reviewer).
+	•	Logger (L) – maintains a running canonical record (master.md and index.md), functioning as the program chair who tracks issues, anomalies, and trajectory.
+
+Each turn produces dual artifacts:
+	1.	Dialogue Trace – the live exchange between Q, C, S, and M.
+	2.	Knowledge Record – structured entries in master.md and cross-references in index.md, ensuring continuity and reproducibility.
+
+This design enables emergent behavior to surface safely: iterative prompting reduces hallucinations, multiple roles enforce checks and balances, and logging ensures auditability. In practice, the loop functions as a synthetic peer-review workshop, converging on insights or anomalies over successive turns.
+
 
 ## 🌊 The Metaformers Loop
 
