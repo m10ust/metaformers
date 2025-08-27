@@ -18,6 +18,32 @@ Starting from a single **initial prompt** — the *seed question* — three mode
 
 ---
 
+```mermaid
+
+flowchart TD
+  %% Core loop
+  U[Seed / Prior Turn] --> Q[Questioner]
+  Q -->|refines prompt| C[Creator]
+  C -->|answer| S[Scriber]
+  C -->|writes to log| L[(Log: master.md)]
+  Q -->|writes to log| L
+  M -->|writes to log| L
+  S -->|summary| L
+  C -->|optional NextPrompt| Q
+  Q -->|every N turns| M[MediatorQ]
+  M -->|meta-critique| Q
+  L -.-> IDX[index.md]
+
+  %% Styling
+  classDef actor fill:#2563eb,stroke:#1e3a8a,color:#ffffff;
+  classDef helper fill:#059669,stroke:#064e3b,color:#ffffff;
+  classDef log fill:#f59e0b,stroke:#78350f,color:#000000;
+
+  class U,Q,C,S,M actor;
+  class L,IDX log;
+
+```
+
 ## 🌊 The Metaformers Loop
 
 The **loop** is the heart of Metaformers.  
