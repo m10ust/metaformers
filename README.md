@@ -46,6 +46,20 @@ flowchart TD
     M -.-> L
     L --> IDX
 
+    %% Peer-review dynamics
+    subgraph PR[Peer-Review Dynamics]
+        Qp[Q = Reviewer #1: Skeptical Probe]
+        Mp[M = Reviewer #2: Scope / Assumption Check]
+        Sp[S = Archivist: Captures Claims & TODOS]
+        Lp[L = Program Chair: Tracks Issues]
+    end
+
+    %% Map main roles to peer-review box
+    Q --> Qp
+    M --> Mp
+    S --> Sp
+    L --> Lp
+
     %% Styles
     classDef questioner fill:#3498db,stroke:#1f3d5a,color:#fff;
     classDef creator fill:#27ae60,stroke:#145a32,color:#fff;
@@ -53,6 +67,7 @@ flowchart TD
     classDef mediator fill:#9b59b6,stroke:#4a235a,color:#fff;
     classDef log fill:#e67e22,stroke:#784212,color:#fff;
     classDef index fill:#e67e22,stroke:#784212,color:#fff;
+    classDef review fill:#95a5a6,stroke:#424949,color:#fff;
 
     class Q questioner;
     class C creator;
@@ -60,6 +75,7 @@ flowchart TD
     class M mediator;
     class L log;
     class IDX index;
+    class Qp,Mp,Sp,Lp review;
 
 ```
 
