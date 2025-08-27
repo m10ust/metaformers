@@ -9,7 +9,7 @@ cd metaformers
 python metaformers_v5.py or ./metaformers_v5.py after doing chmod +x metaformers_v5.py
 
 # Run on Linux
-python metaformers_linux.py
+python metaformers_linux.py (currently the Linux script is based on the old version of Metaformers which means you don't get a prompt to choose which models you want per roles. You need Dolphin3, GPT-OSS, Llama2-uncensored of just use the models you want by tweaking the scripts.) Coming soon V5 for Linux!
 
 ----------------------------------------------------------------------------------------------
 
