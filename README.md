@@ -105,8 +105,8 @@ It follows a simple but powerful arc:
    > "Using local LLMs running on PyTorch to get emergent behaviors from a PostgreSQL database and Python."
 
 2. **Agent Turn-Taking**  
-   - **LLaMA 2 / Dolphin3** reason through the problem, propose steps, ask clarifying questions.  
-   - **GPT-OSS** reframes or contrasts ideas to inject new perspectives.  
+   - **LLaMA 2 / Dolphin3 or any model you choose** reason through the problem, propose steps, ask clarifying questions.  
+   - **GPT-OSS or model of your choice** reframes or contrasts ideas to inject new perspectives.  
    - Each model responds to the *previous* model’s output, creating a chain reaction of refinements.
 
 3. **Emergent Behavior Phase**  
