@@ -188,4 +188,8 @@ flowchart TD
 [Turn 25] Dolphin3: That implies adding a memory bank to the PostgreSQL schema…
 [Turn 26] GPT-OSS: Yes — and here’s the pseudo-code to implement it.
 
+## What's Next?
+
+I am currently working on a **metaformers_v6_builder.py** script that applies the same cool peer-reviewing and multi-role agentic system you see in metaformers but for building apps autonomously in a Docker env. This will be the first agentic peer-reviewed, self-improving app builders out in the wild and I am very excited to show it to you. I should be ready in a couple of days top. :)
+
 Use it in a responsible manner. Adding powerful models in this loops could have deep implications. Change models as needed in the scripts to fit your tech stack. Stay curious and feed the loops!
