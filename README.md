@@ -6,7 +6,7 @@ git clone https://github.com/m10ust/metaformers.git
 cd metaformers
 
 # Run a seed loop (Mac/BSD)
-python metaformers_seedprompt_autochaining_terminal.py
+python metaformers_v5.py or ./metaformers_v5.py after doing chmod +x metaformers_v5.py
 
 # Run on Linux
 python metaformers_linux.py
