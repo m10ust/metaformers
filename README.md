@@ -21,26 +21,45 @@ Starting from a single **initial prompt** — the *seed question* — three mode
 ```mermaid
 
 flowchart TD
-  %% Core loop
-  U[Seed / Prior Turn] --> Q[Questioner]
-  Q -->|refines prompt| C[Creator]
-  C -->|answer| S[Scriber]
-  C -->|writes to log| L[(Log: master.md)]
-  Q -->|writes to log| L
-  M -->|writes to log| L
-  S -->|summary| L
-  C -->|optional NextPrompt| Q
-  Q -->|every N turns| M[MediatorQ]
-  M -->|meta-critique| Q
-  L -.-> IDX[index.md]
+    %% Nodes
+    U[Seed / Prior Turn]
+    Q[Questioner]
+    C[Creator]
+    S[Scriber]
+    M[MediatorQ]
+    L[(Log: master.md)]
+    IDX[index.md]
 
-  %% Styling
-  classDef actor fill:#2563eb,stroke:#1e3a8a,color:#ffffff;
-  classDef helper fill:#059669,stroke:#064e3b,color:#ffffff;
-  classDef log fill:#f59e0b,stroke:#78350f,color:#000000;
+    %% Core flows
+    U --> Q
+    Q -->|refines prompt| C
+    C -->|answer| S
+    S -->|summary| Q
+    Q -->|every N turns| M
+    M -->|meta-critique| Q
+    Q -->|optional NextPrompt| C
 
-  class U,Q,C,S,M actor;
-  class L,IDX log;
+    %% Logging (dashed)
+    Q -.-> L
+    C -.-> L
+    S -.-> L
+    M -.-> L
+    L --> IDX
+
+    %% Styles
+    classDef questioner fill:#3498db,stroke:#1f3d5a,color:#fff;
+    classDef creator fill:#27ae60,stroke:#145a32,color:#fff;
+    classDef scriber fill:#f1c40f,stroke:#7d6608,color:#000;
+    classDef mediator fill:#9b59b6,stroke:#4a235a,color:#fff;
+    classDef log fill:#e67e22,stroke:#784212,color:#fff;
+    classDef index fill:#e67e22,stroke:#784212,color:#fff;
+
+    class Q questioner;
+    class C creator;
+    class S scriber;
+    class M mediator;
+    class L log;
+    class IDX index;
 
 ```
 
