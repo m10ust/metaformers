@@ -7,7 +7,7 @@ git clone https://github.com/m10ust/metaformers.git
 cd metaformers
 
 # Run a seed loop (Mac/BSD)
-python metaformers_v5.py or ./metaformers_v5.py after doing chmod +x metaformers_v5.py
+python metaformers_v5.py or ./metaformers_v5.1.py after doing chmod +x metaformers_v5.1.py
 
 # Run on Linux
 python metaformers_linux.py (currently the Linux script is based on the old version of Metaformers which means you don't get a prompt to choose which models you want per roles. You need Dolphin3, GPT-OSS, Llama2-uncensored of just use the models you want by tweaking the scripts.) Coming soon V5 for Linux!
